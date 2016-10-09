@@ -1,9 +1,7 @@
 <?php
 $directory = 'users';
 $users = array_diff(scandir($directory), array('..', '.'));
-
-define('API_KEY','XXXXX');
-
+define('API_KEY','295804730:AAFNJxECUGSYzpWxsho80DnxvSmS9myjKFU');
 function makeHTTPRequest($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY
 ."/".$method;
@@ -18,12 +16,10 @@ function makeHTTPRequest($method,$datas=[]){
         return json_decode($res);
     }
 }
-
 function ufile($f){
 $content = (int)  file_get_contents($f);
 if($content > 1) file_put_contents($f,($content+1));
 }
-
 $i = 0;
 foreach($users as $u ){
 $i++;
@@ -34,22 +30,21 @@ $i=0;
 $j = json_decode(file_get_contents("users/$u"));
 $r =(makeHTTPRequest("sendMessage",[
 'chat_id'=>$j->id,
-'text'=>"❗️  ربات بفروش می رسد ( درصورت نبود تقاضا منحل می شود )
-
-سورس این ربات بزودی کامل در گیت هاب قرار میگیرد و این ربات به همراه شناسه و اطلاعات قبلی به فروش می رسد .
-
-جهت سوالات بیشتر با @ssc_support تماس بگیرید.
-
-https://telegram.me/joinchat/BdES-zwJKKGeFT8434LVsQ",
-'parse_mode'=>'HTML'
+'text'=>"*Continued to introduce new channels*\n*Powered by* [Deez 🐝](https://telegram.me/BeezInc)",
+'disable_web_page_preview'=>'true'
+'parse_mode'=>'Markdown'
+'reply_markup'=>json_encode([
+      'inline_keyboard'=>[
+        [
+          ['text'=>'Channel','url'=>'https://telegram.me/joinchat/DtebJD-YicabzaggOWIHeQ']
+        ]
+      ]
+    ])
 ]));
-
-
 if ($r->ok){
 ufile("ok");
 }
 else{
 ufile("nok");
 }
-
 }
