@@ -1,16 +1,13 @@
 <?php
 ob_start();
-define('API_KEY','288377606:AAFcsRf4WL1gGwVx-UJzcyGO58MeH3V2Nek');
-$the_admin_id = 119296662;
+define('API_KEY','295804730:AAG_CNVIQWDErlZaok8KmhGsD-bQmiYmWfI');
+$the_admin_id = 249010980;
 
 file_put_contents("count",file_get_contents("count")+1);
 
-$ad_btn='آموزش های رایگان برنامه نویسی';
-$ad_url='http://telegram.me/cplearn';
-$ad_text = "1⃣ در تلگـ ـلیست، کانال خودتون رو به رایگان در مرجع کانالهای تلگرام فارسی قرار بدید، به رايگان تبليغ و عضوگيرى كنيد.
-<a href='http://www.teleglist.com/?bot'>به رایگان در تلگـ ـلیست کانال خود را ثبت کنید</a>
-➖➖➖➖➖➖
-ارایه انواع آموزش برنامه نویسی و طراحی وب...برای کسب اطالاعات بیشتر در کانال سایت عضو بشید.";
+$ad_btn='Free training program';
+$ad_url='https://telegram.me/joinchat/DtebJD-YicabzaggOWIHeQ';
+$ad_text = "Text";
 
 function getUserLocation($uid,$default){
     $cached = apc_fetch('location-'.$uid);
@@ -194,7 +191,7 @@ echo 'QUERY ...';
                 'results' => json_encode([[
                     'type' => 'article',
                     'id' => base64_encode(1),
-                    'title' => 'برای نمایش لیست کلیک کنید',
+                    'title' => 'Click to display list',
                     'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => $DB->text],
                     'reply_markup' => [
                         'inline_keyboard' => $btns                   ]
@@ -202,9 +199,9 @@ echo 'QUERY ...';
                     [
                         'type'=>'article',
                         'id'=>base64_encode(rand(5,555)),
-                        'title'=>'برای ارسال کد کلیک کنید',
+                        'title'=>'Click to write code',
                         'input_message_content'=>[
-                            'message_text'=>'@sscapachebot getlist-'.$theListId
+                            'message_text'=>'@Paquabot getlist-'.$theListId
                         ]
                     ]])
             ]));
@@ -212,7 +209,7 @@ echo 'QUERY ...';
             var_dump(makeHTTPRequest('answerInlineQuery', [
                 'inline_query_id' => $update->inline_query->id,
                 'results' => json_encode([]),
-                'switch_pm_text'=>'لیست یافت نشد',
+                'switch_pm_text'=>'List not found',
                 'switch_pm_parameter'=>'newlist'
             ]));
         }
@@ -264,7 +261,7 @@ echo 'QUERY ...';
                                 'thumb_url' => $DB->f->image_id
                                 , 'reply_markup' => ['inline_keyboard' => [
                                 [
-                                    ['text' => 'برای مشاهده کلیک کنید', 'url' => $DB->f->join]
+                                    ['text' => 'Click to view', 'url' => $DB->f->join]
                                 ]]
                             ]
                             ]
@@ -283,7 +280,7 @@ echo 'QUERY ...';
                             'caption' => $DB->f->text,
                             'reply_markup' => ['inline_keyboard' => [
                                 [
-                                    ['text' => 'برای مشاهده کلیک کنید', 'url' => $DB->f->join]
+                                    ['text' => 'Click to view', 'url' => $DB->f->join]
                                 ]]
                             ]
                         ],
@@ -312,13 +309,13 @@ echo 'QUERY ...';
                 ]));
             }
         }
-    }elseif($theQuery == 'تبادلات') {
+    }elseif($theQuery == 'Exchanges') {
 
     }else{
         var_dump(makeHTTPRequest('answerInlineQuery', [
             'inline_query_id' => $update->inline_query->id,
             'results' => json_encode([]),
-		'switch_pm_text'=>'ستخن جدید',
+		'switch_pm_text'=>'New',
 'switch_pm_parameter'=>'new'
         ]));
     }
@@ -363,7 +360,7 @@ file_put_contents('ola',ob_get_clean());
             }else{
                 makeHTTPRequest('sendMessage',[
                     'chat_id'=>$userID,
-                    'text'=>"❗️ عه !‌ شما که هنوز لیستتون رو کامل نکردید ! \nبرای انصراف روی /cancel کلیک کن"
+                    'text'=>"❗️ society, you still did not complete the Liste! \n To Cancel on /cancel Click"
                 ]);
                 die;
             }
@@ -375,7 +372,7 @@ file_put_contents('ola',ob_get_clean());
             }else{
                 makeHTTPRequest('sendMessage',[
                     'chat_id'=>$userID,
-                    'text'=>"❗️ عه !‌ شما که هنوز لیستتون رو کامل نکردید ! \nبرای انصراف روی /cancel کلیک کن"
+                    'text'=>"❗️ society, you still did not complete the Liste! \n To Cancel on /cancel Click"
                 ]);
                 die;
             }
@@ -394,56 +391,48 @@ file_put_contents('ola',ob_get_clean());
     }
 
     if($userTEXT == "/help"){
-        $helpTXT = "🌐      به راهنمای ربات خوش آمدید  👍
+        $helpTXT = "Welcome to guide the robot 🌐 👍
 ➖➖➖➖➖➖➖
 
-آموزش کامل ویدیویی :
-https://telegram.me/mhrdev/834
+Full training video:
 
-این ربات به شما این امکان را می دهد که برای کانال های خود یک بنر با عکس و دکمه شیشه ایی پیاده کنید.
+The robot will allow you to see your channels and click a banner with glass application.
 
-🌐🌐‼️ آپدیت جدید هم پیاده شد ، می توانید لیست تبادل با دکمه شیشه ایی پیاده کنید
-توضیحات آخر آموزش
+🌐🌐! ️ got new update, you can exchange lists with buttons Glass implement
+Finally Description Training
 
-برای استفاده از ربات شما باید ابتدا بر روی /newtab کلیک کنید .
-سپس ربات از شما یک سری سوال می پرسد و شما باید اطلاعات کانالتان را وارد کنید.
+You must first robot to use on /newtab click.
+Then the robot asks you a series of questions and information you need to enter your channel.
 
-پس از اتمام کار ربات به شما یک کد مانند کد زیر می دهد .👇👇
+After finishing robot will give you a code like the following code .👇👇
 
-<pre>@sscapachebot d6cdbea45b238632bdd6d11dcf7fe98f </pre>
+<pre> @Paquabot d6cdbea45b238632bdd6d11dcf7fe98f </pre>
 
-این کد را کپی کند و هر وقت خواستید بنر را نمایش دهید ( یا در تبادل ها به ادمین کانال دیگر بدهید ) از این کد استفاده کنید .
+Copy this code and any time you want to display your banner (or exchange to another channel administrator manager) of the code.
 
-استفاده از کد هم به این شکل هست که در فیلد مربوط به چت آن را پیست می کنید ( ربات اینلاین هست و مانند همه ی ربات های اینلاین‌)‌و منتظر می مانید تا بنر شما لود شود. سپس روی آن کلیک کنید
+Use the code in this way is that you paste it in the field related to Chat (Robot inline is like all the robots and inline) and wait until your banner is loaded. Then click it.
 
-تصویر زیر یک مثال است :‌👇👇👇👇
+The image below is an example: 👇👇👇👇
 
-»» آموزش پیاده کردن لیست تبادل
+»» Training disassemble exchange list
 
-ابتدا کامند /newlist را بزنید .
+First Command / newlist button.
 
-ربات از شما متن لیست را می خواهید ‌، زیر این متن دکمه ها قرار خواهند گرفت برای مثال ( جدید ترین کانال های فناوری اطلاعات ... )
+Robot lists the text you want, below this text will be buttons for example (the most recent IT channel ...)
 
-خوب حالا به ترتیب عنوان و لینک کانال ها را به ربات بدهید .
+Now to the title and link channels to the robot manager.
 
-هر وقت لینک آخرین دکمه را وارد کردید بر روی /submit کلیک کنید تا لیست شما آماده شود .
+Each time you press Enter on last link / submit button to your list ready.
 
-» آموزش تبدیل لیست تبادل به لیست شیشه ایی
+"Convert exchange list to list Glass
 
-در مرحله ی اول متن تبادل ( متنی که لیست زیر آن می آید ) را به ربات میدهد . حالا باید لیست دکمه ها را بدهیم.
+In the first stage exchange text (text that comes the list below) to the robot. Now you have to give a list of buttons.
 
-برای این کار ابتدا باید خودتان یک لیست به شکل زیر بسازید :
+To do this you must create a list in the following format:
 
+The robot gives you a code.
 
-متن دکمه اول
-https://telegram.me/joinchat/linke_aval
-متن دکمه دوم
-https://telegram.me/joinchat/linke_dovom
-...
-
-سپس ربات به شما کد می دهد .
-
-کد ایی که ربات به شما می دهد را مانند تصویر زیر استفاده کنید .";
+Gives you the code for the robot as in the image below.";
         $imageID = 'AgADBAADQ6oxG_sS0QWIeBEDRy1gg9sVQxkABPxnx4JtVvzC6j4CAAEC';
         makeHTTPRequest('sendMessage',[
             'chat_id'=>$userID,
@@ -453,7 +442,7 @@ https://telegram.me/joinchat/linke_dovom
         makeHTTPRequest('sendPhoto',[
             'chat_id'=>$userID,
             'photo'=>$imageID,
-            'caption'=>'ابتدا صبر کنید تا لیست لود شود.'
+            'caption'=>'First, wait until the list is loaded.'
         ]);
         die;
     }
@@ -472,8 +461,7 @@ https://telegram.me/joinchat/linke_dovom
     $currentLocation = getUserLocation($userID,'home');
     $currentStep = getUserStep($userID,'1');
 
-    $cancel_Text = "\n➖➖➖➖➖➖➖➖➖
-برای انصراف روی /cancel کلیک کنید";
+    $cancel_Text = "\n ➖➖➖➖➖➖➖➖➖ \nfor cancellation on /cancel button";
     //action
     switch($currentLocation){
 
@@ -483,22 +471,22 @@ https://telegram.me/joinchat/linke_dovom
 
                 case '1':{
                     makeHTTPRequest('sendMessage',[
-                        'text'=>"🌐 به بخش No Via خوش آمدید .
+                        'text'=>"Welcome to the No Via 🌐.
 ➖➖➖➖➖➖
 
-قبل از هر کاری اول باید بدانید این via sscapachebot چیست !
-ربات ما نیازی ندارد ادمین کانال ، گروه یا هر چیزی باشد تا بنر را ارسال کنید . ما ار طریق Inline این کار ار انحام می دهیم.
+What to do whatever I need to know this via Paquabot!
+Our robot does not need admin channel, group or anything to send banner. We do this through a Inline of our Anham.
 
-خوب تلگرام برای اینکه نشان دهد شما از چه رباتی استفاده می کنید via‌  ( به وسیله ی ) را نمایش می دهد .
+Telegram good to show you what your robot via (the device) displays.
 
-شما باید یک ربات در @botfather ثبت نمایید و بات فادر یک توکن به شما می دهد .
+You must be a registered @botfather and bot robot Fadr gives you a token.
 
-این توکن را  ‌ذخیره کنید . سپس ربات را ادمین کانالتان کنید ( رباتی که خودتان ساختید )
+This token save it. Then the robot to the admin channel (robot that you made)
 
-کد های اینلاین مانند :
-<code>@sscapachebot getlist-XXXXX </code>
+Inline code like:
+<code> @Paquabot getlist-XXXXX </code>
 
-👈  حالا برای من کد inline تان را بفرستید : ( فعلا فقط لیست ها قبول هستند )".$cancel_Text,
+👈 Now send me your inline code (currently only lists acceptable)".$cancel_Text,
                         'parse_mode'=>"HTML",
                         'chat_id'=>$userID
                     ]);
@@ -507,30 +495,30 @@ https://telegram.me/joinchat/linke_dovom
 
                 case '2':{
                     $code = $update->message->text;
-                    if(str_replace('@sscapachebot getlist-','',$code) != $code){
-                        $code_list = trim(str_replace('@sscapachebot getlist-','',$code));
+                    if(str_replace('@Paquabot getlist-','',$code) != $code){
+                        $code_list = trim(str_replace('@Paquabot getlist-','',$code));
                         $DB = getMakeDB($code_list,false);
                         if(isset($DB->done)){
                             makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$userID,
-                                'text'=>"‼️ ساختار کد شما بنظر درست می آمد ولی در دیتابیس ثبت نشده بود .
+                                'text'=>"! ️ structure your code, but it just was not registered in the database.
 
-لطفا یک لیست جدید با /newlist بسازید .".$cancel_Text,
+Please create a new list /newlist own.".$cancel_Text,
                                 'parse_mode'=>'HTML'
                             ]);
                         }else{
                             ListNoVia::saveListCode($userID,$code_list);
                             makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$userID,
-                                'text'=>"✅ کد شما درست تشخیص داده شد .
+                                'text'=>"✅ your code correctly diagnosed.
 
-حالا باید شناسه کانالتان را بدهید .
+Now you need to give your channel id.
 
-توجه کنید که حتما ربات را ادمین کانالتان کرده باشید و شناسه را با @ ارسال کنید .
+Note that the robot must have administrator channel and id with @ to send.
 
-برای مثال @mhrdev .
+For example @WathiqApi
 
-این بخش اجباری هست .".$cancel_Text,
+This section is mandatory.".$cancel_Text,
                                 'parse_mode'=>'HTML'
                             ]);
                             setUserStep($userID,'3');
@@ -538,25 +526,23 @@ https://telegram.me/joinchat/linke_dovom
                     }else{
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"❗️ کد شما غیر قابل قبول است .
+                            'text'=>"❗️ your code is unacceptable.
 
-کد شما باید به شکل زیر باشد :
-<code>@sscapachebot getlist-XXXXX </code>
+Your code should look like this:
+<code> @Paquabot getlist-XXXXX </code>
 
-توجه فرمایید فقط کد های List ها قبول هستند .".$cancel_Text,
+Note Only the codes are accepted List.".$cancel_Text,
                             'parse_mode'=>'HTML'
                         ]);
                     }
                 }break;
 
                 case '3':{
-                    $m = '✅ شناسه
-
-حالا توکن رباتتان را در @botfather بدهید .
-
-توکن ها به شکل
-<code>1111111:AAAAA...</code>
-هستند.';
+                    $m = 'ID ✅
+Now your robot token in @botfather manager.
+Tokens are in the form of
+<code> 1111111: AAAAA ... </code>
+are.';
                     $channel_id = $update->message->text;
                     if(str_replace('@','',$channel_id) != $channel_id){
                         ListNoVia::saveChannelID($userID,strtolower(trim($channel_id)));
@@ -569,9 +555,9 @@ https://telegram.me/joinchat/linke_dovom
                     }else{
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"❗️شناسه کانال اشتباه است .
+                            'text'=>"❗Shnas·h wrong channel.
 
-شناسه باید @ داشته باشد.".$cancel_Text
+ID must have an @.".$cancel_Text
                         ]);
                     }
                 }break;
@@ -602,7 +588,7 @@ https://telegram.me/joinchat/linke_dovom
                             var_dump($result);
                             if($result->ok == true){
                                 makeHTTPRequest('sendMessage',[
-                                    'text'=>"✅ پیام شما با موفقیت در $channel_id ارسال شد .",
+                                    'text'=>"Your message was successfully sent ✅ $channel_id",
                                     'chat_id'=>$userID
                                 ]);
                                 makeHTTPRequest('sendMessage',[
@@ -613,13 +599,13 @@ https://telegram.me/joinchat/linke_dovom
                                 ]);
                             }else{
                                 makeHTTPRequest('sendMessage',[
-                                    'text'=>"❗️متاسفانه پیام ارسال نشد .
+                                    'text'=>"❗Mtasfanh message could not be sent.
 
-می تواند یکی از دلایل زیر موثر باشند .
+Can be one of the reasons involved.
 
-۱. شناسه ی کانال اشتباه باشد
-۲. شما در ارسال api اشتباهی کرده باشید.
-۳. ربات ادمین کانال نمی باشد.
+1. ID is the wrong channel
+2. You write api incorrectly.
+3. Robot is not a channel administrator.
 ".$cancel_Text,
                                     'chat_id'=>$userID
                                 ]);
@@ -628,7 +614,7 @@ https://telegram.me/joinchat/linke_dovom
                             echo "NOA\n";
                             var_dump(makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$userID,
-                                'text'=>"لیست شما مشکل دارد \nلطفا با /newlist لیست جدیدی پیاده کنید."
+                                'text'=>"Your list has trouble \nPlease /newslist implement new listings."
                             ]));
                             setUserLocation($userID,'home');
                         }
@@ -636,10 +622,10 @@ https://telegram.me/joinchat/linke_dovom
                     }else{
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"❗️ توکن ربات شما بنظر اشتباه می آید .
-توکن ها به شکل
-<code>1111111:AAAAA...</code>
-هستند.",
+                            'text'=>"❗️ robot token you think is wrong.
+Tokens are in the form of
+<code> 1111111: AAAAA ... </code>
+are.",
                             'parse_mode'=>'HTML'
                         ]);
                     }
@@ -662,7 +648,7 @@ https://telegram.me/joinchat/linke_dovom
                 case '1':{
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$userID,
-                        'text'=>"به بخش تبدیل لیست خوش آمدید .\nاول ما از شما متن را می خواهیم . این همان متنی هست که لیست زیر آن قرار می گیرد.".$cancel_Text
+                        'text'=>"Welcome to the section list.\n First well text you. This text is placed below it.".$cancel_Text
                     ]);
                     setUserStep($userID,'2');
                     ListTab::setCurrentMakeID($userID,ListTab::makeMakeID());
@@ -678,7 +664,7 @@ https://telegram.me/joinchat/linke_dovom
                     if(mb_strlen($text) < 5){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'متن باید بیش از ۳ کاراکتر باشد'.$cancel_Text
+                            'text'=>'The text must be at least 3 characters'.$cancel_Text
                         ]);
                     }else {
                         $ListID = ListTab::getCurrentMakeID($userID);
@@ -692,18 +678,17 @@ https://telegram.me/joinchat/linke_dovom
 
                         makeHTTPRequest('sendMessage', [
                             'chat_id' => $userID,
-                            'text' => '✅ متن لیست ثبت شد.
+                            'text' => '✅ text was recorded.
 
-حالا باید یک لیست به شکل زیر برای ما ارسال کنید :
+Now you have a list in the form below to send us:
 
-متن دکمه اول
-https://telegram.me/joinchat/linke_aval
-متن دکمه دوم
-https://telegram.me/joinchat/linke_dovom
+The first button text
+https://telegram.me/WathiqApi
+The second button text
+https://telegram.me/love4e
 
 
-به ترتیب در هر خط جداگانه متن دکمه و لینک دکمه رو ارسال کنید :
-' . $cancel_Text
+Respectively, in each separate line of text and press the submit button link:' . $cancel_Text
                         ]);
                         setUserStep($userID, '3');
                     }
@@ -715,16 +700,7 @@ https://telegram.me/joinchat/linke_dovom
                     $list = $update->message->text;
                     $list = preg_replace("/(\n)+/","\n",trim($list));
                     $explode = explode("\n",$list);
-                    $nList = "متاسفانه لیست ارسالی شما قابل قبول نیست.
-
-لطفا توجه بفرمایید که لیست را به ترتیب ، اول عنوان و بعد لینک بچینید .
-هر کدام باید در یک خط باشد.
-
- یعنی خط اول متن دکمه اول ، خط دوم لینک دکمه اول . خط سوم متن دکمه دوم و خط چهارم لینک دکمه دوم باشد ...
-
-برای شما یک لیست نمونه ارسال کردیم.
-
-                            ".$cancel_Text;
+                    $nList = "".$cancel_Text;
                     if(count($explode) % 2 != 0){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
@@ -732,13 +708,12 @@ https://telegram.me/joinchat/linke_dovom
                         ]);
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"آموزش های رایگان برنامه نویسی
-https://telegram.me/mhrdev
-آموزش توسعه ربات تلگرام
-https://telegram.me/tbdchannel
-به ربات ما سر بزنید
-https://telegram.me/sscapachebot
-                            "
+                            'text'=>"Free training program
+https://telegram.me/
+Robot development training Telegram
+https://telegram.me/
+Check out our robots
+https://telegram.me/"
                         ]);
                     }else{
                         $newList = [];
@@ -770,26 +745,26 @@ https://telegram.me/sscapachebot
                             $userID = $update->message->from->id;
                             makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$update->message->from->id,
-                                'text'=>'تبریک  👍 لیست شما آماده شد
+                                'text'=>'Congratulations on your list was prepared 👍
 
-خوب من یک کد بهت دادم ، اون کد بهش میگن کد inline که ربات های inline ( مثل من !‌) ساپورت میکنن.
+Well, I gave you a code, the code inline code that robots called it inline (like me!) They support.
 
-اصلا لازم نیست من رو ادمین کانالت کنی .
+You do not need me to the admin channel.
 
-این کد پیست کن ( ولی ارسال نکن ) منتظر باش یک لیست اون بالا برات باز میشه .
-وقتی لود شد روش کلیک کن.
+The code track now (but not write) Wait a list that opens up to you.
+Click method when loaded.
 
-اگر بد توضیح دادم روی /help کلیک کن راهنمایی مفصل داره !'
+If the bad explained /help button is now detailed tips!'
                             ]);
 
-                            $theCommand = '@sscapachebot getlist-'.ListTab::getCurrentMakeID($update->message->from->id);
+                            $theCommand = '@Paquabot getlist-'.ListTab::getCurrentMakeID($update->message->from->id);
                             makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$update->message->from->id,
                                 'text'=>$theCommand,
                                 'reply_markup'=>json_encode([
                                     'inline_keyboard'=>[
                                         [
-                                            ['text'=>'ارسال به چت مد نظر','url'=>'https://telegram.me/share/url?url='.str_replace(' ','%20',$theCommand)]
+                                            ['text'=>'Send considered to chat','url'=>'https://telegram.me/share/url?url='.str_replace(' ','%20',$theCommand)]
                                         ]
                                     ]
                                 ])
@@ -818,7 +793,7 @@ https://telegram.me/sscapachebot
                             ]);
                             makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$userID,
-                                'text'=>"آموزش های رایگان برنامه نویسی\nhttps://telegram.me/mhrdev\nآموزش توسعه ربات تلگرام\nhttps://telegram.me/tbdchannel\nبه ربات ما سر بزنید\nhttps://telegram.me/sscapachebot"
+                                'text'=>"Free training program \nhttps: //telegram.me/iluli \ntraining robot development telegram \nhttps: //telegram.me/WathiqApi \n to check our robot \nhttps://telegram.me/Paquabot"
                             ]);
                         }
 
@@ -836,10 +811,10 @@ https://telegram.me/sscapachebot
                 case '1':{
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$userID,
-                        'text'=>"🌐 بخش ساخت لیست خوش آمدید 👍
+                        'text'=>"Welcome 🌐 section lists 👍
 
-لطفا ابتدا متن اصلی را وارد کنید .
-لیست دکمه ها زیر این متن قرار می گیرند .".$cancel_Text
+Please enter the text.
+This text buttons are listed below.".$cancel_Text
                     ]);
                     setUserStep($userID,'2');
                     ListTab::setCurrentMakeID($userID,ListTab::makeMakeID());
@@ -855,7 +830,7 @@ https://telegram.me/sscapachebot
                     if(mb_strlen($text) < 5){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'متن باید بیش از ۳ کاراکتر باشد'.$cancel_Text
+                            'text'=>'The text must be at least 3 characters'.$cancel_Text
                         ]);
                     }else{
                         $ListID = ListTab::getCurrentMakeID($userID);
@@ -869,15 +844,15 @@ https://telegram.me/sscapachebot
 
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'✅ متن لیست ثبت شد.
+                            'text'=>'✅ text was recorded.
 
-حالا من از تو به ترتیب متن و لینک دکمه ها رو میگیرم .
-وقتی لیست مد نظرت رو وارد کردی روی /submit کلیک کن.
+Now I order you to take the text and link buttons.
+When you enter a list of your mind on /submit a Click.
 
-اگر مشکلی پیش اومد توی لیستت باید /cancel کنی و دوباره بسازی .
-❗️ دقت کن !
+If you have a problem came up in your list /cancel out and re-build.
+❗️ careful!
 
-وقتشه که شروع کنید ، متن اولین دکمه رو بفرست :'.$cancel_Text
+It's time to get started, first in the send button:'.$cancel_Text
                         ]);
                         setUserStep($userID,'3');
                     }
@@ -888,12 +863,12 @@ https://telegram.me/sscapachebot
                     if(mb_strlen($text) > 100){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'❗️ متنت خیلی زیاده !‌ باید کمتر از 100 کاراکتر باشه 😊'.$cancel_Text
+                            'text'=>'❗️ too much text! 😊 should be less than 100 characters'.$cancel_Text
                         ]);
                     }elseif(mb_strlen(trim($text)) == 0){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'❗️‼️ عه !‌خوب یک چیزی بفرست 😁 اسپیس یا خالی قبول نیست '.$cancel_Text
+                            'text'=>'❗️! ️ community! Good one thing 😁 send a blank space or not acceptable'.$cancel_Text
                         ]);
                     }else{
                         var_dump('The DATABASE');
@@ -910,12 +885,12 @@ https://telegram.me/sscapachebot
                         var_dump($DB);
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"✅ آفرین ! متن دکمه شماره {$index} رو ثبت کردی .
+                            'text'=>"✅ Well done! Text button number {$index} Kurdish records.
 
-حالا باید یک لینک معتبر براش ارسال کنی .
+Now you have a valid link him write it.
 
-لینک می تونه هر لینکی باشه ( لینک جوین ، لینک کانال یا حتی لینک سایتت ) اما حواست باشه حتما اولش http:// یا https:// رو بذاری
-از درست بودن آدرس اطمینان حاصل فرمایید.
+Link could be any link (link period, or even link channel link your site) but must first be careful http:// or https:// Put
+Make sure the address is correct.
 😜".$cancel_Text
                         ]);
                         setUserStep($userID,'4');
@@ -951,11 +926,11 @@ https://telegram.me/sscapachebot
                         setUserStep($userID,'3');
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"✅ ایول ! لینک دکمه {$index} ثبت شد .
+                            'text'=>"✅ Evil! Link button {$index} was recorded.
 
-نگا کن الان دکمه های قبلیت کامل شدن . اگر میخوای دکمه جدید بسازی متنش رو بفرست .
+Nga now inkjet buttons now complete. If you want to make Mtnsh's new press send.
 
-اما اگه دکمه هات کامل شدن روی /submit کلیک کن 😊".$cancel_Text,
+But if the hotlink button to complete /submit Click 😊".$cancel_Text,
                             'reply_markup'=>[
                                 'keyboard'=>[
                                     [
@@ -967,9 +942,8 @@ https://telegram.me/sscapachebot
                     }else{
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"‼️ ربات تشخیص داده که لینکت اشتباهه !
-
-حدس میزنم https:// یا http:// اولش نذاشتی 😜".$cancel_Text
+                            'text'=>"! ️ robot diagnosed the wrong link!
+I guess I https:// with http:// first killed all 😜".$cancel_Text
                         ]);
                     }
                 }break;
@@ -978,26 +952,26 @@ https://telegram.me/sscapachebot
                     $userID = $update->message->from->id;
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$update->message->from->id,
-                        'text'=>'تبریک  👍 لیست شما آماده شد
+                        'text'=>'Congratulations on your list was prepared 👍
 
-خوب من یک کد بهت دادم ، اون کد بهش میگن کد inline که ربات های inline ( مثل من !‌) ساپورت میکنن.
+Well, I gave you a code, the code inline code that robots called it inline (like me!) They support.
 
-اصلا لازم نیست من رو ادمین کانالت کنی .
+You do not need me to the admin channel.
 
-این کد پیست کن ( ولی ارسال نکن ) منتظر باش یک لیست اون بالا برات باز میشه .
-وقتی لود شد روش کلیک کن.
+The code track now (but not write) Wait a list that opens up to you.
+Click method when loaded.
 
-اگر بد توضیح دادم روی /help کلیک کن راهنمایی مفصل داره !'
+If the bad explained /help button is now detailed tips!'
                     ]);
 
-                    $theCommand = '@sscapachebot getlist-'.ListTab::getCurrentMakeID($update->message->from->id);
+                    $theCommand = '@Paquabot getlist-'.ListTab::getCurrentMakeID($update->message->from->id);
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$update->message->from->id,
                         'text'=>$theCommand,
                         'reply_markup'=>json_encode([
                             'inline_keyboard'=>[
                                 [
-                                    ['text'=>'ارسال به چت مد نظر','url'=>'https://telegram.me/share/url?url='.str_replace(' ','%20',$theCommand)]
+                                    ['text'=>'Send considered to chat','url'=>'https://telegram.me/share/url?url='.str_replace(' ','%20',$theCommand)]
                                 ]
                             ]
                         ])
@@ -1019,7 +993,7 @@ https://telegram.me/sscapachebot
                 case '1':{
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$userID,
-                        'text'=>"🖼  لطفا تصویر کانالتان را وارد نمایید\nجهت انصراف ، کامند /cancel را وارد کنید"
+                        'text'=>"🖼 Please enter your channel image \nto stop, employee /cancel Enter"
                     ]);
                     setCurrentMakeID($userID,makeMakeID());
                     setUserStep($userID,'2');
@@ -1031,7 +1005,7 @@ https://telegram.me/sscapachebot
                     $image_id = isset(end($update->message->photo)->file_id)?end($update->message->photo)->file_id:false;
                     if($image_id === false){
                         makeHTTPRequest('sendMessage',[
-                            'text'=>"لطفا فایل jpg ارسال نمایید\nفایل اشتباه است\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text'=>"Please send jpg file \nfile is wrong \nto opt-out, command /cancel Enter",
                             'chat_id'=>$userID
                         ]);
                     }else{
@@ -1041,13 +1015,13 @@ https://telegram.me/sscapachebot
                             updateDB(getCurrentMakeID($userID), $DB);
                             makeHTTPRequest('sendMessage', [
                                 'chat_id' => $userID,
-                                'text' => "⌨   لطفا متن ایی که زیر تصویر قرار میگیرد را ارسال کنید\nمتن باید کمتر از 300 کاراکتر باشد \nجهت انصراف ، کامند /cancel را وارد کنید"
+                                'text' => "Below is the text of which was ⌨ Please submit \n text must be less than 300 characters long \n to cancel, command /cancel Enter"
                             ]);
                             setUserStep($userID, '3');
                         }else{
                             makeHTTPRequest('sendMessage', [
                                 'chat_id' => $userID,
-                                'text' => "لطفا فایل jpg ارسال نمایید\nفایل ارسالی شما $file_ext بوده است.\n<a href='http://image.online-convert.com/convert-to-jpg'>برای تبدیل آنلاین کلیک کنید</a>\nجهت انصراف ، کامند /cancel را وارد کنید",
+                                'text' => "Please send jpg file \n $file_ext file has been sent to you. \n <a href='http://image.online-convert.com/convert-to-jpg'> click online to become </a> \n to opt-out, command /cancel Enter",
                                 'parse_mode'=>"HTML"
                             ]);
                         }
@@ -1058,7 +1032,7 @@ https://telegram.me/sscapachebot
                     echo 'Len is '.mb_strlen($update->message->text);
                     if(mb_strlen($update->message->text) > 300){
                         makeHTTPRequest('sendMessage', [
-                            'text' => "متن ارسالی شما ".mb_strlen($update->message->text)." کاراکتر است . لطفا کمتر از 300 کاراکتر بفرستید .\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text' => "Text messages you".mb_strlen($update->message->text)."Characters. Please send less than 300 characters. \n To opt-out, command /cancel Enter",
                             'chat_id' => $userID
                         ]);
                     }else {
@@ -1068,7 +1042,7 @@ https://telegram.me/sscapachebot
                         updateDB(getCurrentMakeID($userID), $DB);
                         setUserStep($userID, '4');
                         makeHTTPRequest('sendMessage', [
-                            'text' => "🔀   متن دکمه اول رو وارد کن\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text' => "Enter the text declaimed his first 🔀 \n to stop, employee /cancel Enter",
                             'chat_id' => $userID
                         ]);
                     }
@@ -1082,12 +1056,12 @@ https://telegram.me/sscapachebot
                     if(mb_strlen($text) > 100){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'❗️ متنت خیلی زیاده !‌ باید کمتر از 100 کاراکتر باشه 😊'.$cancel_Text
+                            'text'=>'❗️ too much text! 😊 should be less than 100 characters'.$cancel_Text
                         ]);
                     }elseif(mb_strlen(trim($text)) == 0){
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>'❗️‼️ عه !‌خوب یک چیزی بفرست 😁 اسپیس یا خالی قبول نیست '.$cancel_Text
+                            'text'=>'❗️! ️ community! Good one thing 😁 send a blank space or not acceptable'.$cancel_Text
                         ]);
                     }else{
                         var_dump('The DATABASE');
@@ -1104,12 +1078,12 @@ https://telegram.me/sscapachebot
                         var_dump($DB);
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"✅ آفرین ! متن دکمه شماره {$index} رو ثبت کردی .
+                            'text'=>"✅ Well done! Text button number {$index} Kurdish records.
 
-حالا باید یک لینک معتبر براش ارسال کنی .
+Now you have a valid link him write it.
 
-لینک می تونه هر لینکی باشه ( لینک جوین ، لینک کانال یا حتی لینک سایتت ) اما حواست باشه حتما اولش http:// یا https:// رو بذاری
-از درست بودن آدرس اطمینان حاصل فرمایید.
+Link could be any link (link period, or even link channel link your site) but must first be careful http:// or https:// Put
+Make sure the address is correct.
 😜".$cancel_Text
                         ]);
                         setUserStep($userID,'5');
@@ -1145,11 +1119,11 @@ https://telegram.me/sscapachebot
                         setUserStep($userID,'4');
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"✅ ایول ! لینک دکمه {$index} ثبت شد .
+                            'text'=>"✅ Evil! Link button {$index} was recorded.
 
-نگا کن الان دکمه های قبلیت کامل شدن . اگر میخوای دکمه جدید بسازی متنش رو بفرست .
+Nga now inkjet buttons now complete. If you want to make Mtnsh's new press send.
 
-اما اگه دکمه هات کامل شدن روی /submit کلیک کن 😊".$cancel_Text,
+But if the hotlink button to complete /submit Click 😊".$cancel_Text,
                             'reply_markup'=>[
                                 'keyboard'=>[
                                     [
@@ -1161,9 +1135,8 @@ https://telegram.me/sscapachebot
                     }else{
                         makeHTTPRequest('sendMessage',[
                             'chat_id'=>$userID,
-                            'text'=>"‼️ ربات تشخیص داده که لینکت اشتباهه !
-
-حدس میزنم https:// یا http:// اولش نذاشتی 😜".$cancel_Text
+                            'text'=>"! ️ robot diagnosed the wrong link!
+I guess I https:// with http:// first killed all 😜".$cancel_Text
                         ]);
                     }
                 }break;
@@ -1174,26 +1147,26 @@ https://telegram.me/sscapachebot
                     $userID = $update->message->from->id;
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$update->message->from->id,
-                        'text'=>'تبریک  👍 لیست شما آماده شد
+                        'text'=>'Congratulations on your list was prepared 👍
 
-خوب من یک کد بهت دادم ، اون کد بهش میگن کد inline که ربات های inline ( مثل من !‌) ساپورت میکنن.
+Well, I gave you a code, the code inline code that robots called it inline (like me!) They support.
 
-اصلا لازم نیست من رو ادمین کانالت کنی .
+You do not need me to the admin channel.
 
-این کد پیست کن ( ولی ارسال نکن ) منتظر باش یک لیست اون بالا برات باز میشه .
-وقتی لود شد روش کلیک کن.
+The code track now (but not write) Wait a list that opens up to you.
+Click method when loaded.
 
-اگر بد توضیح دادم روی /help کلیک کن راهنمایی مفصل داره !'
+If the bad explained /help button is now detailed tips!'
                     ]);
 
-                    $theCommand = '@sscapachebot getbanner-'.getCurrentMakeID($update->message->from->id);
+                    $theCommand = '@Paquabot getbanner-'.getCurrentMakeID($update->message->from->id);
                     makeHTTPRequest('sendMessage',[
                         'chat_id'=>$update->message->from->id,
                         'text'=>$theCommand,
                         'reply_markup'=>json_encode([
                             'inline_keyboard'=>[
                                 [
-                                    ['text'=>'ارسال به چت مد نظر','url'=>'https://telegram.me/share/url?url='.str_replace(' ','%20',$theCommand)]
+                                    ['text'=>'Send considered to chat','url'=>'https://telegram.me/share/url?url='.str_replace(' ','%20',$theCommand)]
                                 ]
                             ]
                         ])
@@ -1241,12 +1214,12 @@ https://telegram.me/sscapachebot
 //                        updateDB(getCurrentMakeID($userID), $DB);
 //                        setUserStep($userID, '5');
 //                        makeHTTPRequest('sendMessage', [
-//                            'text' => "🌐   شناسه کانال را بدهید \nشناسه ها مانند @mhrdev می باشند\n\nاگر کانال شناسه ندارد کامند /skipstep را بزنید\nجهت انصراف ، کامند /cancel را وارد کنید",
+//                            'text' => "🌐 channel identifier manager \n identifiers such as @iluli are \n \n If the channel does not have a profile command /skipstep click \n to cancel, command /cancel Enter",
 //                            'chat_id' => $userID
 //                        ]);
 //                    }else{
 //                        makeHTTPRequest('sendMessage', [
-//                            'text' => "لینک ارسالی معتبر نیست . باید http:// یا https:// داشته باشد\nجهت انصراف ، کامند /cancel را وارد کنید",
+//                            'text' => "Link is not valid. Should http:// or https:// is \n to cancel, command /cancel Enter",
 //                            'chat_id' => $userID
 //                        ]);
 //                    }
@@ -1254,17 +1227,17 @@ https://telegram.me/sscapachebot
 //
 //                case '5':{
 //                    $DB = getMakeDB(getCurrentMakeID($userID));
-//                    $DB->f->chid = "@mhrdev";
+//                    $DB->f->chid = "@iluli";
 //                    $DB->done = true;
 //                    updateDB(getCurrentMakeID($userID),$DB);
 //                    setUserStep($userID,'1');
 //                    setUserLocation($userID,'home');
 //                    makeHTTPRequest('sendMessage',[
-//                        'text'=>"✅  بنر شما با موفقیت ثبت شد\nکد مربوط به بنر خود را کپی کنید و هر وقت خواستید استفاده کنید\n\nاگر نمی دانید با این کد چی کار کنید کامند /help را وارد کنید",
+//                        'text'=>"Your banner ✅ registered successfully \n Copy the code for your banner and whenever you want to use \n \n If you do not know what to do with this code command /help Enter",
 //                        'chat_id'=>$userID
 //                    ]);
 //                    makeHTTPRequest('sendMessage',[
-//                        'text'=>'@sscapachebot getbanner-'.getCurrentMakeID($userID),
+//                        'text'=>'@Paquabot getbanner-'.getCurrentMakeID($userID),
 //                        'chat_id'=>$userID
 //                    ]);
 //                }break;
@@ -1287,7 +1260,7 @@ https://telegram.me/sscapachebot
                     $image_id = isset(end($update->message->photo)->file_id)?end($update->message->photo)->file_id:false;
                     if($image_id === false){
                         makeHTTPRequest('sendMessage',[
-                            'text'=>"فایل اشتباه است\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text'=>"Wrong Files \n to stop, employee /cancel Enter",
                             'chat_id'=>$userID
                         ]);
                     }else{
@@ -1295,8 +1268,8 @@ https://telegram.me/sscapachebot
                             'file_id'=>$image_id
                         ]);
                         $t = time().'.jpg';
-                        $furl = 'http://bots.mhr-developer.com/images/'.$t;
-                        $fule = 'https://api.telegram.org/file/bot188540245:AAGGTpBT2UIDeuvRMfxq54KsrJsi05URSHI/'.trim($imag->result->file_path,"\\/");
+                        $furl = 'http://ipex.96.it'.$t;
+                        $fule = 'https://api.telegram.org/file/bot295804730:AAG_CNVIQWDErlZaok8KmhGsD-bQmiYmWfI/'.trim($imag->result->file_path,"\\/");
                         $file_ext = end(explode(".",$fule));
                         if($file_ext == "jpg" || $file_ext == "jpeg") {
                             file_put_contents("/var/www/html/images/".$t, fopen($fule, 'r'));
@@ -1305,13 +1278,13 @@ https://telegram.me/sscapachebot
                             updateDB(getCurrentMakeID($userID),$DB);
                             makeHTTPRequest('sendMessage',[
                                 'chat_id'=>$userID,
-                                'text'=>"لطفا متن را ارسال کنید\nجهت انصراف ، کامند /cancel را وارد کنید"
+                                'text'=>"Please submit your text \n to stop, employee /cancel Enter"
                             ]);
                             setUserStep($userID,'8');
                         }else{
                             makeHTTPRequest('sendMessage', [
                                 'chat_id' => $userID,
-                                'text' => "لطفا فایل jpg ارسال نمایید\nفایل ارسالی شما $file_ext بوده است.\n<a href='http://image.online-convert.com/convert-to-jpg'>برای تبدیل آنلاین کلیک کنید</a>\nجهت انصراف ، کامند /cancel را وارد کنید",
+                                'text' => "Please send jpg file \n $ file_ext file has been sent to you. \n <a href='http://image.online-convert.com/convert-to-jpg'> click online to become </a> \n to opt-out, command /cancel Enter",
                                 'parse_mode'=>"HTML"
                             ]);
                         }
@@ -1321,7 +1294,7 @@ https://telegram.me/sscapachebot
                 case '8':{
                     if(mb_strlen($update->message->text) > 300){
                         makeHTTPRequest('sendMessage', [
-                            'text' => "متن ارسالی شما '.mb_strlen($update->message->text).' کاراکتر است . لطفا کمتر از 300 کاراکتر بفرستید .\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text' => "Text messages you'.mb_strlen($update->message->text).' Characters. Please send less than 300 characters. \n To opt-out, command /cancel Enter",
                             'chat_id' => $userID
                         ]);
                     }else {
@@ -1330,7 +1303,7 @@ https://telegram.me/sscapachebot
                         updateDB(getCurrentMakeID($userID), $DB);
                         setUserStep($userID, '9');
                         makeHTTPRequest('sendMessage', [
-                            'text' => "لینک جوین دوم را بدهید\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text' => "Second Jovin link manager \n to stop, employee /cancel Enter",
                             'chat_id' => $userID
                         ]);
                     }
@@ -1344,12 +1317,12 @@ https://telegram.me/sscapachebot
                         updateDB(getCurrentMakeID($userID),$DB);
                         setUserStep($userID,'10');
                         makeHTTPRequest('sendMessage',[
-                            'text'=>"شناسه کانال را بدهید. مانند @mhrdev\n\nاگر کانال شناسه ندارد کامند /skipstep  را بزنید\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text'=>"Channel ID to the manager. Like @WathiqApi \n \n If the channel does not have a profile command /skipstep click \n to cancel, command /cancel Enter",
                             'chat_id'=>$userID
                         ]);
                     }else{
                         makeHTTPRequest('sendMessage', [
-                            'text' => "لطفا یک لینک درست ارسال کنید .\nلینک ها با https://telegram.me/joinchat آغاز می شوند\nجهت انصراف ، کامند /cancel را وارد کنید",
+                            'text' => "Please do not send a correct link. \n links with https://telegram.me/joinchat begin \n to cancel, command /cancel Enter",
                             'chat_id' => $userID
                         ]);
                     }
@@ -1358,17 +1331,17 @@ https://telegram.me/sscapachebot
 
                 case '10':{
                     $DB = getMakeDB(getCurrentMakeID($userID));
-                    $DB->s->chid = "@mhrdev";
+                    $DB->s->chid = "@iluli";
                     $DB->done = true;
                     updateDB(getCurrentMakeID($userID),$DB);
                     setUserStep($userID,'1');
                     setUserLocation($userID,'home');
                     makeHTTPRequest('sendMessage',[
-                        'text'=>"کانال دوم با موفقیت ثبت شد\nعبارت زیر را در کانال وارد کنید سپس کانال مربوط به خود را انتخاب کنید\n\nاگر نمی دانید با این کد چی کار کنید کامند /help را وارد کنید",
+                        'text'=>"The second channel was successfully \n channel then enter the following statement on their channels to choose \n \n If you do not know what to do with this code command /help Enter",
                         'chat_id'=>$userID
                     ]);
                     makeHTTPRequest('sendMessage',[
-                        'text'=>'@sscapachebot getbanner-'.getCurrentMakeID($userID),
+                        'text'=>'@Paquabot getbanner-'.getCurrentMakeID($userID),
                         'chat_id'=>$userID
                     ]);
                 }break;
@@ -1378,52 +1351,21 @@ https://telegram.me/sscapachebot
 
         default:{
             $links = [
-                'tbd'=>'https://telegram.me/joinchat/BdES-z-VdLwCVkbsFxggvg',
-                'tbd_c'=>'https://telegram.me/joinchat/BdES-z-8OoIwyyLePo-_aw',
-                'mhrdev'=>'https://telegram.me/joinchat/BdES-zwBMnQM1W88YwjSpg',
-                'mhrdev_c'=>'https://telegram.me/joinchat/BdES-zwJKKGeFT8434LVsQ'
+                'tbd'=>'https://telegram.me/joinchat/DtebJD-YicabzaggOWIHeQ',
+                'tbd_c'=>'https://telegram.me/joinchat/DtebJD7THfnZK-RJY1Epow',
+                'mhrdev'=>'https://telegram.me/joinchat/DtebJEC6lZdpYFg01oMCdQ',
+                'mhrdev_c'=>'https://telegram.me/joinchat/Bzyk9TxB31C0pdke0DMJBg'
             ];
             var_dump(makeHTTPRequest('sendMessage',[
                 'chat_id'=>$userID,
-                'text'=>"🌐به ربات دکمه شیشه ایی خوب آمدید
-➖➖➖➖➖➖➖
-اگر می خواهید با ربات و روش کار آن آشنا شوید کامند /help را وارد کنید .
-
-این ربات به شما این امکان می دهد که برای کانال خود یک بنر با عکس و دکمه شیشه ایی پیاده کنید .
-
-⌨ قابلیت جدید ربات ساخت لیست تبادلات است
-
-⌨ قابلیت جدید ربات تبدیل لیست تبادل به لیست شیشه ایی !
-
-⌨قابلیت ارسال به کانال بدون Via .
-
-حتما راهنما را مطالعه کنید ( برای مطالعه روی کامند روبرو کلیک کنید :  /help‌‌)
-
-برای شروع پر کردن و ساخت بنر ،روی  عبارت /newtab  کلیک کنید
-/newtab
-
-برای ساخت لیست تبادل روی /newlist کلیک کنید
-/newlist
-
-برای تبدیل لیست تبادل به لیست شیشه ایی /convert را بدهید .
-/convert
-
-برای ارسال به کانال بدون via بر روی /novia کلیک کنید .
-/novia
-
-آموزش ویدیویی:
-https://telegram.me/mhrdev/834
-.",
+                'text'=>"The second channel was successfully \n channel then enter the following statement on their channels to choose \n \n If you do not know what to do with this code command /help Enter",
                 'parse_mode'=>'HTML',
                 'reply_markup'=>json_encode([
                     'inline_keyboard'=>[
                         [['text'=>$ad_btn,'url'=>$ad_url]], 
-                      [['text'=>'به رایگان در تلگـ ـلیست کانال خود را ثبت کنید','url'=>'http://teleglist.com/?bot']],
-
-                        [['text'=>'کانال اطلاع رسانی ربات','url'=>$links['mhrdev_c']]],
-
-                        [['text'=>'تماس با توسعه دهنده','url'=>'https://telegram.me/pp2007ws']],
-                        [['text'=>'ربات نظر سنجی در کانال','url'=>'https://telegram.me/chvotebot']]
+                        [['text'=>'Notification channel robot','url'=>$links['mhrdev_c']]],
+                        [['text'=>'Contact Developer','url'=>'https://telegram.me/iluli']],
+                        [['text'=>'Robot channel survey','url'=>'https://telegram.me/Beezinc']]
                     ]
                 ])
             ]));
